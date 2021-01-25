@@ -35,11 +35,17 @@ public class Dashboard extends HttpServlet {
                     String userId = null;
                     if (session.getAttribute("userid") != null)
                         userId =(String)session.getAttribute("userid");  
-                    if (userId == null ) {
+                    if (userId == null) {
                         out.println("No UserId was found in session.<br>");
                     } else {
-                        out.println("UserId obtained from session :" + userId + "<br>");
-                        out.println("<a href='logout'>Logout of session</a><br>");
+                        out.println("Successfully logged in as: <b>" + userId + "</b><br><br>");
+                        
+                        //dummy text to make it feel less lonely on the page
+                        out.println("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+                        		+ "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut"
+                        		+ " aliquip ex ea commodo consequat. ");
+                        
+                        out.println("<a href='logout'>Logout</a><br>");
                     }
                     out.println("</body></html>");
         }
